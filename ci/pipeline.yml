@@ -3,7 +3,7 @@ resource_types:
   type: docker-image
   source:
     repository: injectyy/docker-compose
-    tag: 0.0.2
+    tag: latest
 
 resources:
 - name: project
@@ -12,9 +12,6 @@ resources:
     uri: https://github.com/JPro173/concourse-resdir.git
 - name: injecty
   type: injectyy
-  source:
-    path: project
-
 
 jobs:
 - name: example_task
@@ -22,5 +19,6 @@ jobs:
   plan:
   - get: project
   - get: injecty
+
   - task: example
     file: project/ci/tasks/example_task.yml
