@@ -19,7 +19,5 @@ jobs:
   plan:
   - get: project
   - get: injecty
-    params: {work_dir: project}
-
   - task: example
     file: project/ci/tasks/example_task.yml

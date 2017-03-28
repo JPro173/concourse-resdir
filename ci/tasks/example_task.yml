@@ -9,6 +9,7 @@ image_resource:
 
 inputs:
 - name: project
+- name: injecty
 
 run:
   path: project/ci/scripts/example-task.sh
