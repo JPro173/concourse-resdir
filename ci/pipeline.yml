@@ -18,6 +18,8 @@ jobs:
   public: true
   plan:
   - get: project
+  - task: example2
+    file: project/ci/tasks/example2_task.yml
   - get: injecty
   - task: example
     file: project/ci/tasks/example_task.yml
