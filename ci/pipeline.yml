@@ -1,0 +1,22 @@
+resource_types:
+- name: telegram-notification
+  type: docker-image
+  source:
+    repository: w32blaster/concourse-telegram-notifier
+    tag: latest
+
+resources:
+- name: project
+  type: git
+  source:
+    uri: https://github.com/JPro173/concourse-resdir.git
+
+
+jobs:
+- name: example_task
+  public: true
+  plan:
+  - get: project
+  - task: example
+    privileged: true
+    file: project/ci/tasks/example_task.yml
